@@ -1,18 +1,45 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import House from '../House/House';
+import axios from 'axios';
+import { getHouses } from '../../Redux/reducer';
 
 
 
 class Dashboard extends Component {
+
+    componentDidMount(){
+        setTimeout(() => axios.get('/api/houses').then(res => {console.log('hi')
+            this.props.getHouses(res.data)}).catch(err => {
+                console.log(err)
+        }), 1000)
+    }
+
+
+
     render(){
+        let { houses } = this.props;
+        let displayHouses= houses.map((house, index) => {
+            return <div key={ index }>
+                    <House {...house} /></div>
+        })
         return(
             <div>
-                Dashboard
-                <House />
+                
+                {displayHouses}
             </div>
         )
     }
 }
 
-export default /* connect(mapStateToProps, mapDispatchToProps) */(Dashboard)
+
+const mapStateToProps = state => {
+    return {
+    houses: state.houses
+    }
+}
+const mapDispatchToProps = {
+    getHouses
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
