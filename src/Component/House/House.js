@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 function House (props){
 
@@ -24,7 +24,7 @@ function House (props){
             {/* <p>{props.margage}</p> */}
             {/* <p>{props.rent}</p> */}
             <button onClick={() => handleDelete( props.id )}> Delete </button>
-             {/* <Link><button>edit</button></Link> */}
+             <Link to={`/edit/${ props.id }`}><button>edit</button></Link>
         </div>
     )
 }

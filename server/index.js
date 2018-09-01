@@ -21,6 +21,8 @@ app.post('/api/houses', controller.addNewHouse);
 // app.post('/api/houses', controller.addNewImg);
 // app.post('/api/houses', controller.addCost);
 
+app.put('/api/houses/:id', controller.editHouse);
+
 app.delete(`/api/houses/:id`, controller.deleteHouse);
 
 const PORT = 4000;

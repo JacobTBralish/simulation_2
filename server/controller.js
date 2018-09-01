@@ -18,6 +18,18 @@ module.exports = {
                 console.log(error)
             })
     },
+    editHouse: (req, res) => {
+        const db = req.app.get('db');
+        let { name, address, city, state, zip  } = req.body;
+        let { id } = req.params;
+
+        db.edit_House( [id, name, address, city, state, zip ] ).then(house => {
+            res.status(200).json(house)}).catch(error => {
+                res.status(500).json({ errormessage: 'Cannot update the listing.'});
+                console.log(error)
+            })
+    },
+
     deleteHouse: (req, res) =>{
         const db = req.app.get('db')
         let { id } = req.params;

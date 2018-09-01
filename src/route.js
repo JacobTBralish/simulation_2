@@ -9,6 +9,7 @@ export default (
             <Switch>
                 <Route component={Dashboard} exact path= '/'/>
                 <Route component={Wizard} path= '/wizard/'/>
+                <Route component={Wizard} path= '/edit/:id'/>
                 <Route component={Wizardtwo} path= '/Wizardtwo'/>
                 <Route component={Wizardthree} path='/Wizardthree' />
             </Switch>

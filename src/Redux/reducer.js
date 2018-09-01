@@ -17,11 +17,11 @@ const UPDATE_ADDRESS = 'UPDATE_ADDRESS';
 const UPDATE_CITY = 'UPDATE_CITY';
 const UPDATE_STATE = 'UPDATE_STATE';
 const UPDATE_ZIP = 'UPDATE_ZIP';
-// const UPDATE_IMG = 'UPDATE_IMG';
-// const UPDATE_MORGAGE = 'UPDATE_MORGAGE';
-// const UPDATE_RENT = 'UPDATE_RENT';
-// const ADD_COST = 'ADD_COST';
-// const ADD_NEW_IMG = 'ADD_NEW_IMG';
+const UPDATE_IMG = 'UPDATE_IMG';
+const UPDATE_MORGAGE = 'UPDATE_MORGAGE';
+const UPDATE_RENT = 'UPDATE_RENT';
+const ADD_COST = 'ADD_COST';
+const ADD_NEW_IMG = 'ADD_NEW_IMG';
 
 
 export default function reducer( state = initialState, action){
@@ -41,16 +41,16 @@ export default function reducer( state = initialState, action){
             return {...state, state: action.payload}
         case UPDATE_ZIP:
             return {...state, zip: action.payload}
-        // case UPDATE_IMG:
-        //     return {...state, zip: action.payload}
-        // case UPDATE_MORGAGE:
-        //     return {...state, zip: action.payload}
-        // case UPDATE_RENT:
-        //     return {...state, zip: action.payload}
-        // case ADD_COST:
-        //     return {...state, houses: [...state.houses, action.payload]}
-        // case ADD_NEW_IMG:
-        //     return {...state, houses: [...state.houses, action.payload]}
+        case UPDATE_IMG:
+            return {...state, img: action.payload}
+        case UPDATE_MORGAGE:
+            return {...state, morgage: action.payload}
+        case UPDATE_RENT:
+            return {...state, rent: action.payload}
+        case ADD_COST:
+            return {...state, houses: [...state.houses, action.payload]}
+        case ADD_NEW_IMG:
+            return {...state, houses: [...state.houses, action.payload]}
 
 
     
@@ -113,46 +113,46 @@ export function addNewHouse( name, address, city, state, zip){
 
 
 
-// export function addNewImg( img ){
-//     const newImg ={
-//         img
-//     }
-//     return{
-//         type: ADD_NEW_IMG,
-//         payload: newImg
-//     }
-// }
+export function addNewImg( img ){
+    const newImg ={
+        img
+    }
+    return{
+        type: ADD_NEW_IMG,
+        payload: newImg
+    }
+}
 
-// export function updateImg( img ){
-//     return{
-//         type: UPDATE_IMG,
-//         payload: img
-//     }
-// }
-
-
+export function updateImg( img ){
+    return{
+        type: UPDATE_IMG,
+        payload: img
+    }
+}
 
 
-// export function displayMorgage( morgage ){
-//     return{
-//         type: UPDATE_MORGAGE,
-//         payload: morgage
-//     }
-// }
-// export function displayRent( rent ){
-//     return{
-//         type: UPDATE_RENT,
-//         payload: rent
-//     }
-// }
 
-// export function addCost( morgage, rent ){
-//     const newCost ={
-//         morgage,
-//         rent
-//     }
-//     return{
-//         type: ADD_COST,
-//         payload: newCost
-//     }
-// }
+
+export function displayMorgage( morgage ){
+    return{
+        type: UPDATE_MORGAGE,
+        payload: morgage
+    }
+}
+export function displayRent( rent ){
+    return{
+        type: UPDATE_RENT,
+        payload: rent
+    }
+}
+
+export function addCost( morgage, rent ){
+    const newCost ={
+        morgage,
+        rent
+    }
+    return{
+        type: ADD_COST,
+        payload: newCost
+    }
+}

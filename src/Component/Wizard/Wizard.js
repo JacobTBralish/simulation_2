@@ -16,7 +16,16 @@ class Wizard extends Component {
         })
     }
 
+    handleEdit(id, name, address, city, state, zip){
+        axios.put(`/api/inventory/${ id }`, {name, address, city, state, zip}).then(res => {
+            this.props.history.push('/')}).catch(err => {
+                console.log(err)
+        })
+    }
+
     render(){
+        let { id } = this.props.match.params;
+        console.log(id)
         let {name, address, city, state, zip, updateName, updateAddress, updateCity, updateState, updateZip} = this.props;
         return(
             <div>
@@ -28,7 +37,7 @@ class Wizard extends Component {
                 <input placeholder='Zip:' onChange={e => updateZip(e.target.value)} value={zip}></input>
                 <Link to='/'><button>Cancel</button></Link>
                 <button onClick={() => this.handlePost(name, address, city, state, zip)}><Link to='/Wizardtwo'>Next Step</Link></button>
-
+                <button onClick={() => {this.handleEdit( id, name, address, city, state, zip )}} >Save</button>
             </div>
         )
     }
