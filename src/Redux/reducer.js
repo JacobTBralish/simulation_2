@@ -97,13 +97,16 @@ export function getHouses( houses ){
     }
 }
 
-export function addNewHouse( name, address, city, state, zip){
+export function addNewHouse( name, address, city, state, zip, img, morgage, rent){
     const newHouse ={
         name,
         address,
         city,
         state,
-        zip
+        zip,
+        img,
+        morgage,
+        rent
     }
     return{
         type: ADD_NEW_HOUSE,
@@ -129,8 +132,6 @@ export function updateImg( img ){
         payload: img
     }
 }
-
-
 
 
 export function displayMorgage( morgage ){

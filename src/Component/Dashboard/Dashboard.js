@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import House from '../House/House';
 import axios from 'axios';
 import { getHouses } from '../../Redux/reducer';
+// import '../../App.css';
+
 
 
 
 class Dashboard extends Component {
 
     componentDidMount(){
-        setTimeout(() => axios.get('/api/houses').then(res => {console.log('hi')
+        setTimeout(() => axios.get('/api/houses').then(res => {
             this.props.getHouses(res.data)}).catch(err => {
                 console.log(err)
         }), 1000)

@@ -6,6 +6,7 @@ import { updateImg, addNewImg } from '../../Redux/reducer';
 
 
 
+
 class Wizardtwo extends Component {
     constructor() {
         super();
@@ -29,6 +30,7 @@ class Wizardtwo extends Component {
                 
                 <input placeholder='Image URL:' onChange={e => updateImg( e.target.value)} value={img}></input>
                 <Link to='/'><button>Cancel</button></Link>
+                <button><Link to='Wizard'>Previous</Link></button>
                 <button onClick={() => this.handlePostImg(img)} ><Link to='/Wizardthree'> Next Step</Link></button>
 
             </div>

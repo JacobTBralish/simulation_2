@@ -36,6 +36,7 @@ class Wizard extends Component {
                 <input placeholder='State:' onChange={e => updateState(e.target.value)} value={state}></input>
                 <input placeholder='Zip:' onChange={e => updateZip(e.target.value)} value={zip}></input>
                 <Link to='/'><button>Cancel</button></Link>
+                
                 <button onClick={() => this.handlePost(name, address, city, state, zip)}><Link to='/Wizardtwo'>Next Step</Link></button>
                 <button onClick={() => {this.handleEdit( id, name, address, city, state, zip )}} >Save</button>
             </div>

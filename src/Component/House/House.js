@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import { withRouter, Link } from 'react-router-dom';
 
+
 function House (props){
 
     function handleDelete( id ){
@@ -14,17 +15,20 @@ function House (props){
 
     
     return(
+        
         <div>
-            {/* <p>{props.img}</p> */}
-            <p>{props.name}</p>
-            <p>{props.address}</p>
-            <p>{props.city}</p>
-            <p>{props.state}</p>
-            <p>{props.zip}</p>
-            {/* <p>{props.margage}</p> */}
-            {/* <p>{props.rent}</p> */}
-            <button onClick={() => handleDelete( props.id )}> Delete </button>
-             <Link to={`/edit/${ props.id }`}><button>edit</button></Link>
+            <section className="contentbox">
+                <p>{props.img}</p>
+                <p>{props.name}</p>
+                <p>{props.address}</p>
+                <p>{props.city}</p>
+                <p>{props.state}</p>
+                <p>{props.zip}</p>
+                {/* <p>{props.margage}</p> */}
+                {/* <p>{props.rent}</p> */}
+                <button onClick={() => handleDelete( props.id )}> Delete </button>
+                <Link to={`/edit/${ props.id }`}><button>edit</button></Link>
+            </section>
         </div>
     )
 }

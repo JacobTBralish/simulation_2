@@ -1,2 +1,4 @@
-ALTER TABLE houses
-  ADD img  text;
+-- ALTER TABLE houses
+--   ADD COLUMN img text;
+--   ADD COLUMN morgage integer;
+--   ADD COLUMN rent integer;

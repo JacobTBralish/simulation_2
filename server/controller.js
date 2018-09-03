@@ -10,9 +10,9 @@ module.exports = {
     },
     addNewHouse: ( req, res ) => {
         const db = req.app.get('db');
-        let { name, address, city, state, zip  } = req.body;
+        let { name, address, city, state, zip, img, morgage, rent  } = req.body;
         
-        db.post_house( {name, address, city, state, zip} ).then(house => {
+        db.post_house( {name, address, city, state, zip, img, morgage, rent} ).then(house => {
             res.status(200).json(house)}).catch(error => {
                 res.status(500).json( { errormessage: 'Unable to post your item!' } )
                 console.log(error)
